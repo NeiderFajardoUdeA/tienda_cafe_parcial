@@ -1,0 +1,39 @@
+<div class="container">
+    <div>
+        <h1 class="indie-flower-regular">
+            El aroma mágico
+        </h1>
+        <hr/>
+        <img src="/assets/img/banner_cafe.png" alt="Café" class="img-fluid">
+        <hr/>
+    </div>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col-8">
+                    <table data-testid="cafe-table" class="table">
+                        <thead class="table-dark">
+                            <tr>
+                            @for ( head of tableHeaders(); track $index ){
+                                <th scope="col">{{ head }}</th>
+                            }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for ( cafe of cafeList(); track $index ){
+                                <tr>
+                                    <th scope="row">{{ cafe.id }}</th>
+                                    <td>{{ cafe.nombre }}</td>
+                                    <td>{{ cafe.tipo }}</td>
+                                    <td>{{ cafe.region }}</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>             
+    </div>
+    <div>
+        <p>{{totalOrigen()}}</p>
+        <p>{{totalBlend()}}</p>
+    </div>
+</div>
